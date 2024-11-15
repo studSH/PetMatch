@@ -38,6 +38,16 @@
 | Erstellt_am | DATE    | Erstellungsdatum         |
 | Erstellt_um | TIME    | Zeit der Erstellung      |
 
+
+## Bild
+
+| Spalte       | Typ     | Beschreibung                    |
+|--------------|---------|---------------------------------|
+| Bild_id      | INTEGER | PK                              |
+| Feed_id      | INTEGER | FK zu Feedbeitrag               |
+| Bild         | BLOB    | Bilddaten                       |
+| Beschreibung | TEXT    | Optional: Beschreibung des Bildes |
+
 ## Benutzer (Registrierung/Anmeldung)
 
 | Spalte         | Typ     | Beschreibung                     |
