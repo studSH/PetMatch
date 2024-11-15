@@ -34,6 +34,7 @@
 | Feed_id     | INTEGER | PK                       |
 | Tier_id     | INTEGER | FK                       |
 | Halter_id   | INTEGER | FK                       |
+| Titel       | TEXT    | Titel des Beitrages      |
 | Inhalt      | TEXT    | Der Inhalt des Beitrages |
 | Erstellt_am | DATE    | Erstellungsdatum         |
 | Erstellt_um | TIME    | Zeit der Erstellung      |
