@@ -17,6 +17,7 @@
 | Spalte       | Typ     | Beschreibung            |
 |--------------|---------|-------------------------|
 | Halter_id    | INTEGER | PK                      |
+| Email        | TEXT    | FK, E-Mail-Adresse des Benutzers |
 | Name         | TEXT    | Name des Halters        |
 | Strasse      | TEXT    | Straßennamen            |
 | Hausnummer   | INTEGER | Hausnummer              |
@@ -36,3 +37,11 @@
 | Inhalt      | TEXT    | Der Inhalt des Beitrages |
 | Erstellt_am | DATE    | Erstellungsdatum         |
 | Erstellt_um | TIME    | Zeit der Erstellung      |
+
+## Benutzer (Registrierung/Anmeldung)
+
+| Spalte         | Typ     | Beschreibung                     |
+|----------------|---------|----------------------------------|
+| Email          | TEXT    | PK, E-Mail-Adresse des Benutzers |
+| Benutzername   | TEXT    | Benutzername                     |
+| Passwort       | TEXT    | Gehashter Wert des Passworts     |
