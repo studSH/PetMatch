@@ -7,6 +7,6 @@ layout: default
 
 Hier ist die Startseite deines Projekts. Wähle eine der folgenden Seiten aus:
 
-- [Wertversprechen](wertversprechen.md)
+- [Wertversprechen](./werteversprechen.md)
 - [Datenmodell](datenmodell.md)
 - [Architektur](architektur.md)
