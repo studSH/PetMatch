@@ -17,4 +17,8 @@ callouts:
     color: yellow
   download:
     title: 💾 Download
+<<<<<<< HEAD
     color: grey-dk
+=======
+    color: grey-dk
+>>>>>>> 18680448c266675450e73ada268fda7b33c6a5c9
