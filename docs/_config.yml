@@ -1,0 +1,20 @@
+Matchtitle: "PetMatch"
+remote_theme: just-the-docs/just-the-docs
+markdown: kramdown
+search_enabled: true
+search_tokenizer_separator: /[\s/]+/
+mermaid:
+  version: "10.5.0" # Optional, für Diagramme
+callouts:
+  tip:
+    title: 🤍 Tipp
+    color: blue
+  info:
+    title: ℹ️ Info
+    color: blue
+  attention:
+    title: ❕ Achtung
+    color: yellow
+  download:
+    title: 💾 Download
+    color: grey-dk
