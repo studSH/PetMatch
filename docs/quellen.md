@@ -10,6 +10,9 @@ In diesem Dokument werden die Quellen die wir für das Projekt verwendeten haben
 
 - **justin_baecker.jpg**  
   Quelle: [Link zur Bildquelle](https://de.pinterest.com/pin/757097387331883067/)  
+
+  - **erm.png**  
+  Quelle: eigene Darstellung
   
 
 
