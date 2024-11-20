@@ -87,5 +87,5 @@ Es wurde noch kein Code implementiert, da dies im Rahmen der Aufgabenstellung ni
 
 ## **Mitwirkende**
 - **Simone Heinrich** (Matr.-Nr.: 77211956881)  
-- **Patryk Kujawski** (Matr.-Nr.: 77211961546)
+- **Patryk Kujawski** (Matr.-Nr.: )
 
