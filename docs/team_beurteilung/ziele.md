@@ -1,12 +1,12 @@
 ---
-title: Verbesserungen
+title: Ziele
 parent: Team Beurteilung
-nav_order: 2
+nav_order: 1
 ---
 
 
 {: .no_toc }
-# Was würden wir nächste mal besser machen
+# Erreichte Ziele und Misserfolge
 
 <details open markdown="block">
 {: .text-delta }

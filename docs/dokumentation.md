@@ -1,1 +1,0 @@
-# Dokumentation für unser Projekt 

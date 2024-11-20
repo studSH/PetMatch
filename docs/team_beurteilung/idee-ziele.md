@@ -1,3 +1,18 @@
+---
+title: Ideen und persönliche Ziele
+parent: Team Beurteilung
+nav_order: 5
+---
+
+<details open markdown="block">
+{: .text-delta }
+<summary>Table of contents</summary>
++ ToC
+{: toc }
+</details>
+
+# Team 7: PetMatch
+
 # Team 7: PetMatch
 
 **Gruppe:**  
@@ -28,3 +43,29 @@ Wir möchten eine Webseite entwickeln, die sich auf Haustiere konzentriert. Die 
 - Mein Interesse liegt besonders darin, zu erfahren, wie die Daten für die Darstellung im Frontend in einer Datenbank gespeichert werden und wie diese Daten sowohl visuell präsentiert als auch interaktiv nutzbar gemacht werden können. Dabei frage ich mich, ob hier wieder das MVC-Designmuster Anwendung findet, das ich in OOP 2 faszinierend fand, oder ob es für komplexere Webanwendungen auch komplexere Architekturen oder Templates gibt.
 
 - Bisher habe ich im Kurs OOP 2 lediglich eine GUI mit Swing entwickelt, wobei die Anbindung an eine Datenbank nur sehr rudimentär war, da wir uns noch nicht mit Datenbanken beschäftigt hatten. In diesem Projekt möchte ich tiefer in die Full-Stack-Entwicklung eintauchen und besser verstehen, wie Datenbanken und Benutzeroberflächen effektiv miteinander interagieren.
+
+# How Might We Fragen
+
+## Hundebesitzer
+
+**How might we help**  
+Hundebesitzer (Zielgruppe)  
+
+**to**  
+Spielkameraden für ihre Haustiere finden und Gefahren wie Giftköder melden oder vermeiden (zu adressierender Bedarf)  
+
+**considering**  
+ihre begrenzte Zeit für Recherche nach Spielpartnern und ihre Sorgen um die Sicherheit ihrer Haustiere (optionale Faktoren)  
+
+---
+
+## Katzenbesitzer
+
+**How might we help**  
+Katzenbesitzer (Zielgruppe)  
+
+**to**  
+eine vertrauenswürdige Betreuung für ihre Katzen organisieren, indem sie sich mit anderen Katzenbesitzern zum gegenseitigen Katzensitten vernetzen (zu adressierender Bedarf)  
+
+**considering**  
+ihre Bedenken bezüglich der Sicherheit ihrer Katzen und das Vertrauen, das nötig ist, um jemanden für die Betreuung auszuwählen (optionale Faktoren)  

@@ -1,3 +1,20 @@
+---
+title: Quellen
+parent: Technische Dokumente
+nav_order: 5
+---
+
+
+{: .no_toc }
+# Quellen
+
+<details open markdown="block">
+{: .text-delta }
+<summary>Table of contents</summary>
++ ToC
+{: toc }
+</details>
+
 # Bildquellen für PetMatch
 
 In diesem Dokument werden die Quellen die wir für das Projekt verwendeten haben hinterlegt.

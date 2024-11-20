@@ -1,3 +1,21 @@
+---
+title: Datenmodell
+parent: Technische Dokumente
+nav_order: 2
+---
+
+
+
+{: .no_toc }
+# Datenmodell
+
+<details open markdown="block">
+{: .text-delta }
+<summary>Table of contents</summary>
++ ToC
+{: toc }
+</details>
+
 # Datenmodell PetMatch
 
 ## Tier

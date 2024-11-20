@@ -1,3 +1,19 @@
+---
+title: Werteversprechen
+parent: Technische Dokumente
+nav_order: 6
+---
+
+{: .no_toc }
+# Werteversprechen
+
+<details open markdown="block">
+{: .text-delta }
+<summary>Table of contents</summary>
++ ToC
+{: toc }
+</details>
+
 # Wertversprechen von PetMatch
 
 Das Wertversprechen von **PetMatch** ist, Haustierbesitzern eine Plattform zu bieten, auf der sie sich vernetzen, austauschen und Unterstützung in ihrem Alltag mit ihren Tieren finden können.
