@@ -5,7 +5,7 @@ nav_order: 97
 
 # Persona für PetMatch
 
-![Anna Müller](/docs/Bilder/anna_mueller.jpeg)
+![Anna Müller](Bilder/anna_mueller.jpeg)
 
 **Name:** Anna Müller  
 **Alter:** 35 Jahre  
@@ -30,7 +30,7 @@ Anna lebt in einer Stadtwohnung und geht regelmäßig mit ihrem Hund spazieren. 
 
 
 
-![Justin Bäcker](/docs/Bilder/justin_baecker.jpg)
+![Justin Bäcker](Bilder/justin_baecker.jpg)
 
 **Name:** Justin Bäcker  
 **Alter:** 23 Jahre  
