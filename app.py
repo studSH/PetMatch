@@ -11,6 +11,14 @@ def index():
     # Diese Funktion wird ausgeführt, wenn jemand die Startseite besucht
     return render_template("index.html", title="Startseite")
 
+@app.route("/registrierung")
+def registrierung():
+    return render_template("registrierung.html", title="Registrieren")
+
+@app.route("/anmeldung")
+def anmeldung():
+    return render_template("anmeldung.html", title="Anmelden")
+
 # Prüfe, ob das Skript direkt ausgeführt wird (nicht importiert) 
 if __name__ == "__main__":
     # Starte die Flask-Anwendung im Debug-Modus, damit Änderungen ohne Neustart übernommen werden
