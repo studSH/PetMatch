@@ -16,11 +16,11 @@ nav_order: 3
 {: toc }
 </details>
 
-# Meeting 15.11.2024
+# Arbeitsaufteilung
 
 Beim heutigen Treffen auf Discord haben wir zuerst die Dokumentationsarchitektur besprochen, wie wir diese aufbauen sollen. Da dies unser erstes Projekt dieser Art ist, haben wir uns dafür entschieden, die Architektur des Dozenten Prof. Dr. Eck von [https://github.com/hwrberlin/fswd-app/tree/main](https://github.com/hwrberlin/fswd-app/tree/main) zu übernehmen. Diese wurde auch am 15.11.2024 in unser Repository [https://github.com/studSH/PetMatch](https://github.com/studSH/PetMatch) übernommen. 
 
-## Design Decision 
+## Absprasche vom 15.11.2024 
 
 ### Zusammenarbeit 
 
@@ -55,7 +55,7 @@ Bei der Aufgabenaufteilung war unsere erste Idee, diese auf rein **Frontend** un
 # API Vergleich
 
 
-## 01: Vergleich der Geoapify Geocoding API und Google Geocoding API
+## Vergleich der Geoapify Geocoding API und Google Geocoding API
 ### Meta
 
 Status  
@@ -103,3 +103,40 @@ Diese API bietet ausreichende Funktionalität für die Umwandlung von Adressen i
 - Geoapify Geocoding API: [https://www.geoapify.com/geocoding-api/](https://www.geoapify.com/geocoding-api/)
 - Google Geocoding API: [https://developers.google.com/maps/documentation/geocoding/](https://developers.google.com/maps/documentation/geocoding/)  
 Zugriff 13-Nov-2024
+
+
+# Datenbank
+
+## Firebase oder SQLite
+
+### Meta
+
+**Status**  
+: **Entschieden**
+
+### Problemstellung
+
+In unserem Team stellte sich die Frage, welche Datenbank wir nutzen sollen, da wir auf diverse Daten zugreifen, diese abfragen und organisieren müssen. Viele Funktionen unserer Webentwicklung können nur mit einer korrekten Datenbank umgesetzt werden. Außerdem möchten wir die Möglichkeit bieten, Bilder hochzuladen, die für andere sichtbar sind.
+
+### Entscheidung
+
+Wir haben uns für SQLite entschieden, auch wenn wir mit Firebase in App-Entwicklung arbeiten und dies uns eine Echtzeit-Synchronisation ermöglicht, ist dies für unser Projekt nicht von Relevanz, da wir am Ende ein fertiges Projekt abgeben und dieses wird Nutzern nicht zur Verfügung gestellt.
+
+Dementsprechend können wir auch gut auf den Sicherheitsmechanismus von Firebase verzichten. SQLite kommt aus mehreren Gründen für uns in Frage. Wir haben den Umgang mit SQL queries im Modul Datenbanken gelernt und haben ein sehr gutes Beispiel aus der Repository von Prof. Dr. Eck, an der wir uns orientieren können und diese für unsere Bedürfnisse anpassen werden. Ein weiterer Vorteil ist, dass wir kein Firebase Setup benötigen und die Daten von SQLite lokal gespeichert werden.
+
+### Tabelle
+
+| **Merkmal**                | **SQLite**                          | **Firebase**                          | **Bewertung für das Projekt**                                       |
+|-----------------------------|--------------------------------------|---------------------------------------|----------------------------------------------------------------------|
+| **Einrichtung**            | Einfach                              | Erfordert Firebase-Setup und Google-Konto | Eine einfache Einrichtung anhand des Beispiels ist vom großen Vorteil. |
+| **Echtzeit-Synchronisation** | Nicht möglich                       | Unterstützt Echtzeit                  | Für unser Projekt ist dies irrelevant.                              |
+| **Kosten**                 | Kostenlos                            | Kostenlos bis zu einem Limit          | Kein ausschlaggebender Punkt, da unser Projekt bei Firebase nicht das Limit erreichen würde. |
+| **Skalierbarkeit**         | Für kleinere Projekte gedacht         | Hoch skalierbar                       | Da wir ein kleines Projekt haben, ist SQLite ausreichend.           |
+| **Komplexität**            | Gering                               | Höher bei der Datenmodellierung       | Eine geringere Komplexität ist uns lieber.                          |
+| **Datensicherheit**        | Keine Sicherheitsmechanismen          | Eingebaute Sicherheits-Features       | Da es sich hier um ein Uni-Projekt handelt, sind Sicherheitsmaßnahmen zweitrangig. |
+
+### Quellen
+
+- SQLite: [https://www.computerwoche.de/article/2834389/6-gute-gruende-fuer-sqlite.html](https://www.computerwoche.de/article/2834389/6-gute-gruende-fuer-sqlite.html)
+- Firebase: [https://blog.back4app.com/de/was-ist-firebase/](https://blog.back4app.com/de/was-ist-firebase/)  
+Zugriff 29-Nov-2024
