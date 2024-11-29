@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>PetMatch</h1>
+        <nav>
+            <a href="{{ url_for('index') }}">Startseite</a>
+        </nav>
+    </header>
+    
+    <!-- Platz für individuelle Seiteninhalte -->
+    {% block content %}{% endblock %}
+    
+    <footer>
+        <p>2024 PetMatch</p>
+    </footer>
+</body>
+</html>
