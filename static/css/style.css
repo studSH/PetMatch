@@ -1,0 +1,81 @@
+/* Allgemeines Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header */
+.header .nav{
+    background-color: #f8f9fa;
+    padding: 10px 20px;
+    display: flex; /* Flexbox hinzufügen */
+    justify-content: space-between; /* Abstand zwischen Logo und Navigation */
+    align-items: center; /* Vertikale Ausrichtung */
+    border-bottom: 1px solid #ddd;
+}
+
+/* Default: Startseite */
+.logo-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px auto;
+}
+
+.logo {
+    width: 150px;
+}
+
+/* Anpassung für andere Seiten */
+.seite-anmeldung .logo-container {
+    display: flex;
+    justify-content: flex-end;
+    margin: 10px 20px;
+}
+
+.seite-registrierung .logo-container {
+    display: flex;
+    justify-content: flex-end;
+    margin: 10px 20px;
+}
+
+
+.nav {
+    display: flex;
+    gap: 15px;
+}
+
+.nav a {
+    text-decoration: none;
+    color: #3dac6f;
+    font-weight: bold;
+}
+
+.nav a:hover {
+    color: #ff00aa;
+    text-decoration: underline;
+}
+
+/* Hauptinhalt */
+.content {
+    padding: 20px;
+}
+
+/* Footer */
+.footer {
+    background-color: #f8f9fa;
+    padding: 10px 20px;
+    text-align: center;
+    border-top: 1px solid #ddd;
+}
+
+.footer a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #333;
+}
+
+.footer a:hover {
+    color: #007bff;
+    text-decoration: underline;
+}

@@ -19,6 +19,18 @@ def registrierung():
 def anmeldung():
     return render_template("anmeldung.html", title="Anmelden")
 
+@app.route("/kontakt")
+def kontakt():
+    return render_template("kontakt.html", title="Kontakt")
+
+@app.route("/impressum")
+def impressum():
+    return render_template("impressum.html", title="Impressum")
+
+@app.route("/datenschutz")
+def datenschutz():
+    return render_template("datenschutz.html", title="Datenschutz")
+
 # Prüfe, ob das Skript direkt ausgeführt wird (nicht importiert) 
 if __name__ == "__main__":
     # Starte die Flask-Anwendung im Debug-Modus, damit Änderungen ohne Neustart übernommen werden

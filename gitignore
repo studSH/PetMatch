@@ -1,7 +1,0 @@
-# Virtuelle Umgebung
-venv/
-
-# Python-Caches
-__pycache__/
-*.pyc
-*.pyo
