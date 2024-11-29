@@ -140,3 +140,5 @@ Dementsprechend können wir auch gut auf den Sicherheitsmechanismus von Firebase
 - SQLite: [https://www.computerwoche.de/article/2834389/6-gute-gruende-fuer-sqlite.html](https://www.computerwoche.de/article/2834389/6-gute-gruende-fuer-sqlite.html)
 - Firebase: [https://blog.back4app.com/de/was-ist-firebase/](https://blog.back4app.com/de/was-ist-firebase/)  
 Zugriff 29-Nov-2024
+
+-- test um zu commiten--
