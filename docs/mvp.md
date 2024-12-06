@@ -10,7 +10,7 @@ Die Webanwendung **PetMatch** ermöglicht es Nutzern, ihre Adresse einzugeben, d
 ### **Backend-Fokus**
 1. **Benutzerregistrierung und -anmeldung**
    - Nutzer können sich registrieren und einloggen
-   - Speicherung der Nutzerdaten in SQLite (z. B. E-Mail, Passwort, Rollen)
+   - Speicherung der Nutzerdaten in SQLite (z. B. E-Mail, Passwort)
 
 2. **Geoapify-Integration**
    - **Route 1:** POST `/api/konvertierte-adresse`
