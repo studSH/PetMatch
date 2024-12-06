@@ -3,6 +3,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    
 }
 
 /* Header */
@@ -67,6 +68,8 @@ body {
     padding: 10px 20px;
     text-align: center;
     border-top: 1px solid #ddd;
+      
+    
 }
 
 .footer a {

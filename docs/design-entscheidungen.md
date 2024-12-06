@@ -141,3 +141,81 @@ Dementsprechend können wir auch gut auf den Sicherheitsmechanismus von Firebase
 - Firebase: [https://blog.back4app.com/de/was-ist-firebase/](https://blog.back4app.com/de/was-ist-firebase/)  
 Zugriff 29-Nov-2024
 
+# Entscheidung für Formularverwaltung (WTForms vs. Keine zusätzliche Abhängigkeit)
+
+## Meta
+Status: **Decided**
+- **Entscheidung getroffen von:** Simone Heinrich, Patryk Kujawski
+- **Erstellt**: 06. Dezember 2024
+
+
+
+- **Problemstellung**:  
+  Sollten wir WTForms (+ Flask-WTF) verwenden, um Formulare für die Adressumwandlung und Benutzerregistrierung zu erstellen, oder einfache HTML-Formulare ohne zusätzliche Abhängigkeit nutzen?
+
+## Entscheidung
+Wir **entscheiden uns für HTML-Formulare ohne zusätzliche Abhängigkeit**.
+
+## Begründung
+### Abgewogene Optionen
+| Kriterium                     | WTForms (+ Flask-WTF)                            | Keine zusätzliche Abhängigkeit       |
+|-------------------------------|--------------------------------------------------|--------------------------------------|
+| **Lernaufwand**               | ❌ Erfordert OOP- und Python-Kenntnisse          | ✔️ Kein zusätzlicher Lernaufwand     |
+| **Validierung**               | ✔️ Integrierte und robuste Validierungslogik     | ❌ Validierung muss manuell erfolgen |
+| **Umsetzungsaufwand**         | ❌ Zusätzliche Konfiguration erforderlich         | ✔️ Schnell umsetzbar                 |
+| **Fehleranfälligkeit**        | ✔️ Reduziert durch zentrale Validierungslogik    | ❌ Erhöhte Fehleranfälligkeit        |
+
+### Entscheidungsgrundlage
+- **Pro HTML-Formulare ohne Abhängigkeit**:
+  - Einfach zu implementieren und anpassbar an unsere spezifischen Anforderungen.
+  - Kein zusätzlicher Lernaufwand für Flask-WTF.
+  - Da das Projekt nicht produktiv gehen wird, reicht eine manuelle Validierung aus.
+- **Contra HTML-Formulare**:
+  - Validierung muss sowohl im Frontend als auch im Backend implementiert werden.
+- **Pro WTForms**:
+  - Bietet saubere Backend-Validierung.
+  - Wiederverwendbarkeit für zukünftige Projekte.
+- **Contra WTForms**:
+  - Höherer initialer Aufwand und komplexere Integration.
+
+## Fazit
+Da das MVP keine komplexen Formularanforderungen hat, reicht eine einfache HTML-Lösung aus, um Zeit zu sparen und dennoch funktional zu bleiben.
+
+# Entscheidung für Styling (Bootstrap vs. Keine zusätzliche Abhängigkeit)
+
+## Meta
+Status: **Decided**
+- **Erstellt**: 06. Dezember 2024
+- **Entscheidung getroffen von:** Simone Heinrich, Patryk Kujawski
+
+- **Problemstellung**:  
+  Sollten wir Bootstrap verwenden, um ein responsives und modernes Design zu erstellen, oder stattdessen einfache CSS-Regeln verwenden?
+
+## Entscheidung
+Wir **entscheiden uns für Bootstrap**.
+
+## Begründung
+### Abgewogene Optionen
+| Kriterium                     | Bootstrap (+ Bootstrap-Flask)                   | Keine zusätzliche Abhängigkeit       |
+|-------------------------------|--------------------------------------------------|--------------------------------------|
+| **Lernaufwand**               | ❌ Erfordert Grundkenntnisse in CSS-Frameworks   | ✔️ Kein zusätzlicher Lernaufwand     |
+| **Design-Konsistenz**         | ✔️ Einheitliches und modernes Styling            | ❌ Abhängig von individuellen Fähigkeiten |
+| **Umsetzungsaufwand**         | ✔️ Schnelles Prototyping mit vorgefertigten Komponenten | ❌ Manuelle Erstellung erforderlich |
+| **Performance**               | ❔ Zusätzlicher Code kann Performance beeinflussen | ✔️ Minimaler Ressourcenverbrauch     |
+
+### Entscheidungsgrundlage
+- **Pro Bootstrap**:
+  - Bietet vorgefertigte Komponenten wie Formulare, Navigation und Buttons, die direkt verwendet werden können.
+  - Ermöglicht ein responsives Design ohne großen Mehraufwand.
+- **Contra Bootstrap**:
+  - Einführung in das Framework erfordert eine Lernkurve.
+  - Abhängigkeit von externem Code.
+- **Pro keine Abhängigkeit**:
+  - Minimaler Ressourcenverbrauch und einfache Kontrolle über das Design.
+  - Kein zusätzlicher Code, der gepflegt werden muss.
+- **Contra keine Abhängigkeit**:
+  - Erfordert mehr Zeit für die manuelle Erstellung von responsive Layouts und Design-Komponenten.
+
+## Fazit
+Bootstrap ist ideal, um mit wenig Aufwand ein konsistentes und modernes Design zu erreichen, das unseren UI-Anforderungen gerecht wird. Der zusätzliche Lernaufwand ist minimal im Vergleich zum Nutzen für das Projekt.
+
