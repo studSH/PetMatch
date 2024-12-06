@@ -158,12 +158,14 @@ Wir **entscheiden uns für HTML-Formulare ohne zusätzliche Abhängigkeit**.
 
 ## Begründung
 ### Abgewogene Optionen
-| Kriterium                     | WTForms (+ Flask-WTF)                            | Keine zusätzliche Abhängigkeit       |
-|-------------------------------|--------------------------------------------------|--------------------------------------|
-| **Lernaufwand**               | ❌ Erfordert OOP- und Python-Kenntnisse          | ✔️ Kein zusätzlicher Lernaufwand     |
-| **Validierung**               | ✔️ Integrierte und robuste Validierungslogik     | ❌ Validierung muss manuell erfolgen |
-| **Umsetzungsaufwand**         | ❌ Zusätzliche Konfiguration erforderlich         | ✔️ Schnell umsetzbar                 |
-| **Fehleranfälligkeit**        | ✔️ Reduziert durch zentrale Validierungslogik    | ❌ Erhöhte Fehleranfälligkeit        |
+### Abgewogene Optionen
+
+| Kriterium            | WTForms (+ Flask-WTF)                 | Keine zusätzliche Abhängigkeit       |
+|----------------------|----------------------------------------|--------------------------------------|
+| **Lernaufwand**      | ❌ Erfordert OOP- und Python-Kenntnisse | ✔️ Kein zusätzlicher Lernaufwand     |
+| **Validierung**      | ✔️ Integrierte und robuste Validierungslogik | ❌ Validierung muss manuell erfolgen |
+| **Umsetzungsaufwand**| ❌ Zusätzliche Konfiguration erforderlich | ✔️ Schnell umsetzbar                 |
+| **Fehleranfälligkeit**| ✔️ Reduziert durch zentrale Validierungslogik | ❌ Erhöhte Fehleranfälligkeit        |
 
 ### Entscheidungsgrundlage
 - **Pro HTML-Formulare ohne Abhängigkeit**:
@@ -196,12 +198,13 @@ Wir **entscheiden uns für Bootstrap**.
 
 ## Begründung
 ### Abgewogene Optionen
-| Kriterium                     | Bootstrap (+ Bootstrap-Flask)                   | Keine zusätzliche Abhängigkeit       |
-|-------------------------------|--------------------------------------------------|--------------------------------------|
-| **Lernaufwand**               | ❌ Erfordert Grundkenntnisse in CSS-Frameworks   | ✔️ Kein zusätzlicher Lernaufwand     |
-| **Design-Konsistenz**         | ✔️ Einheitliches und modernes Styling            | ❌ Abhängig von individuellen Fähigkeiten |
-| **Umsetzungsaufwand**         | ✔️ Schnelles Prototyping mit vorgefertigten Komponenten | ❌ Manuelle Erstellung erforderlich |
-| **Performance**               | ❔ Zusätzlicher Code kann Performance beeinflussen | ✔️ Minimaler Ressourcenverbrauch     |
+| Kriterium            | Bootstrap (+ Bootstrap-Flask)                 | Keine zusätzliche Abhängigkeit       |
+|----------------------|-----------------------------------------------|--------------------------------------|
+| **Lernaufwand**      | ❌ Erfordert Grundkenntnisse in CSS-Frameworks | ✔️ Kein zusätzlicher Lernaufwand     |
+| **Design-Konsistenz**| ✔️ Einheitliches und modernes Styling         | ❌ Abhängig von individuellen Fähigkeiten |
+| **Umsetzungsaufwand**| ✔️ Schnelles Prototyping mit vorgefertigten Komponenten | ❌ Manuelle Erstellung erforderlich |
+| **Performance**      | ❔ Zusätzlicher Code kann Performance beeinflussen | ✔️ Minimaler Ressourcenverbrauch     |
+
 
 ### Entscheidungsgrundlage
 - **Pro Bootstrap**:
@@ -218,4 +221,11 @@ Wir **entscheiden uns für Bootstrap**.
 
 ## Fazit
 Bootstrap ist ideal, um mit wenig Aufwand ein konsistentes und modernes Design zu erreichen, das unseren UI-Anforderungen gerecht wird. Der zusätzliche Lernaufwand ist minimal im Vergleich zum Nutzen für das Projekt.
+
+### Quellen
+
+- User Interfaces | Full-Stack Web Dev @HWR Berlin URL: GitHub Repository
+- Mitschrift Vorlesung Web-Entwicklung an der HWR Berlin bei Prof. Dr. Eck 6.12..docx 
+- Get started with Bootstrap · Bootstrap v5.3
+Zugriff 6-Dezember-2024
 

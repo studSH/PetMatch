@@ -43,15 +43,15 @@ Die Webanwendung **PetMatch** ermöglicht es Nutzern, ihre Adresse einzugeben, d
 ## Aufgabenliste
 
 ### **Backend**
-[ ] SQLite-Datenbank erstellen und Tabellen für Nutzer, Adressen und Beiträge definieren.
-[ ] Routen implementieren.
-[ ] Geoapify-Integration zur Adressumwandlung einrichten (Route: `/api/konvertierte-adresse`).
-[ ] Radius-Filter-Logik und Feed-Endpunkt implementieren (Route: `/api/feed`).
+- [ ] SQLite-Datenbank erstellen und Tabellen für Nutzer, Adressen und Beiträge definieren.
+- [ ] Routen implementieren.
+- [ ] Geoapify-Integration zur Adressumwandlung einrichten (Route: `/api/konvertierte-adresse`).
+- [ ] Radius-Filter-Logik und Feed-Endpunkt implementieren (Route: `/api/feed`).
 
 ### **Frontend**
-[ ] HTML-Formulare für Registrierung, Login und Mein Profil erstellen.
-[ ] Adressformular mit POST-Request an das Backend implementieren.
-[ ] Design der Seiten erweitern (Bootstrap).
+- [ ] HTML-Formulare für Registrierung, Login und Mein Profil erstellen.
+- [ ] Adressformular mit POST-Request an das Backend implementieren.
+- [ ] Design der Seiten erweitern (Bootstrap).
 
 ---
 
