@@ -158,7 +158,6 @@ Wir **entscheiden uns für HTML-Formulare ohne zusätzliche Abhängigkeit**.
 
 ## Begründung
 ### Abgewogene Optionen
-### Abgewogene Optionen
 
 | Kriterium            | WTForms (+ Flask-WTF)                 | Keine zusätzliche Abhängigkeit       |
 |----------------------|----------------------------------------|--------------------------------------|
@@ -198,6 +197,7 @@ Wir **entscheiden uns für Bootstrap**.
 
 ## Begründung
 ### Abgewogene Optionen
+
 | Kriterium            | Bootstrap (+ Bootstrap-Flask)                 | Keine zusätzliche Abhängigkeit       |
 |----------------------|-----------------------------------------------|--------------------------------------|
 | **Lernaufwand**      | ❌ Erfordert Grundkenntnisse in CSS-Frameworks | ✔️ Kein zusätzlicher Lernaufwand     |
