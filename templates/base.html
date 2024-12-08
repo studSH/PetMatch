@@ -5,35 +5,69 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title }}</title>
+    
+    <!-- Bootstrap CSS  -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Eigene CSS für spezifische Anpassungen -->
     <link rel="stylesheet" href="static/css/style.css">
 </head>
 
 <body>
-   <header class="header">
-    <nav class="nav">
-        <a href="{{ url_for('index') }}">Startseite</a>
-        <a href="{{ url_for('registrierung') }}">Registrieren</a>
-        <a href="{{ url_for('anmeldung') }}">Anmeldung</a>
-    </nav>
+    <!-- Header mit Navigation -->
+    <header class="header">
+        <!-- Bootstrap Navbar-Komponente -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <!-- Branding: Link zur Startseite -->
+                <a class="navbar-brand" href="{{ url_for('index') }}">PetMatch</a>
+                
+                <!-- Toggler für mobile Ansicht -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <!-- Navigationselemente -->
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto"> <!-- ms-auto sorgt für Abstand nach links -->
+                        <!-- Links zu den Seiten -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url_for('index') }}">Startseite</a>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url_for('registrierung') }}">Registrieren</a>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url_for('anmeldung') }}">Anmelden</a>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url_for('kontakt') }}">Kontakt</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
 
-    <div class="logo-container">
-        <img src="{{ url_for('static', filename='bilder/petmatchlogo.jpeg') }}" alt="PetMatch Logo" class="logo">
-    </div>
-
-</header>
-
-    <!-- Platz für individuelle Seiteninhalte -->
-    <main class="content">
-        {% block content %}{% endblock %}
+    <!-- Hauptinhalt der Seite -->
+    <main class="content container mt-5">
+        {% block content %}{% endblock %} <!-- Platzhalter für Seiteninhalt -->
     </main>
 
-    <footer class="footer">
+    <!-- Footer-Bereich -->
+    <footer class="footer text-center py-3">
         <div class="container">
-            <a href="{{ url_for('kontakt') }}">Kontakt</a>
-            <a href="{{ url_for('impressum') }}">Impressum</a>
+            <!-- Links für Impressum und Datenschutz -->
+            <a href="{{ url_for('impressum') }}">Impressum</a> |
             <a href="{{ url_for('datenschutz') }}">Datenschutz</a>
         </div>
     </footer>
+
+    <!-- Einbindung von Bootstrap JS für interaktive Komponenten -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

@@ -1,84 +1,78 @@
-/* Allgemeines Styling */
+/* Allgemeines Styling für die gesamte Seite */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    
+    font-family: Arial, sans-serif; /* Schriftart  */
+    margin: 0; /* Entfernt Standardabstände */
+    padding: 0; /* Entfernt Standardinnenabstände */
+    background-color: #f5e7d7; /* Cremige Hintergrundfarbe für alle Seiten */
+    display: flex; /* Aktiviert Flexbox für das Layout */
+    flex-direction: column; /* vertikale Anordnung */
+    min-height: 100vh; /* Sicherstellung mindesthöhe Bildschirm */
 }
 
-/* Header */
-.header .nav{
-    background-color: #f8f9fa;
-    padding: 10px 20px;
-    display: flex; /* Flexbox hinzufügen */
+/* Header (Navigationsleiste) */
+.header .nav {
+    background-color: #f8f9fa; /* Helle Hintergrundfarbe für die Navigationsleiste */
+    padding: 10px 20px; /* Innenabstand oben/unten: 10px, links/rechts: 20px */
+    display: flex; 
     justify-content: space-between; /* Abstand zwischen Logo und Navigation */
-    align-items: center; /* Vertikale Ausrichtung */
-    border-bottom: 1px solid #ddd;
+    align-items: center; /* Vertikale Zentrierung der Navigationselemente */
+    border-bottom: 1px solid #ddd; /* Dünne Linie unter dem Header */
 }
 
-/* Default: Startseite */
+/* Logo-Container für die Startseite */
 .logo-container {
-    display: flex;
-    justify-content: center;
-    margin: 20px auto;
+    display: flex; 
+    justify-content: center; 
+    margin: 20px auto; 
 }
 
 .logo {
-    width: 150px;
+    width: 150px; /* Größe des Logos */
 }
 
-/* Anpassung für andere Seiten */
-.seite-anmeldung .logo-container {
-    display: flex;
-    justify-content: flex-end;
-    margin: 10px 20px;
-}
-
-.seite-registrierung .logo-container {
-    display: flex;
-    justify-content: flex-end;
-    margin: 10px 20px;
-}
-
-
+/* Navigation */
 .nav {
-    display: flex;
-    gap: 15px;
+    display: flex; 
+    gap: 15px; /* Abstand zwischen den Links */
 }
 
 .nav a {
-    text-decoration: none;
-    color: #3dac6f;
-    font-weight: bold;
+    text-decoration: none; /* Entfernt die Unterstreichung von Links */
+    color: #3dac6f; /* Standardfarbe der Links */
+    font-weight: bold; /* Fettgedruckter Text */
 }
 
 .nav a:hover {
-    color: #ff00aa;
-    text-decoration: underline;
+    color: #ff00aa; /* Farbe der Links bei Hover */
+    text-decoration: underline; /* Unterstreichung beim Hover */
 }
 
 /* Hauptinhalt */
 .content {
-    padding: 20px;
+    padding: 20px; 
+    flex: 1; /* Hauptinhalt hat genug Platz */
 }
 
-/* Footer */
+/* Footer (Impressum und Datenschutz) */
 .footer {
-    background-color: #f8f9fa;
-    padding: 10px 20px;
-    text-align: center;
-    border-top: 1px solid #ddd;
-      
-    
+    background-color: #f8f9fa; 
+    padding: 10px 20px; 
+    text-align: center; /* Zentriert den Text im Footer */
+    border-top: 1px solid #ddd; /* Dünne Linie über dem Footer */
+    position: relative; /* Footer bleibt immer unten, wenn der Inhalt genug Platz hat */
+    bottom: 0; /* Footer bleibt am unteren Rand */
+    width: 100%; /* Gesamte breite der Seite für den Footer */
+    box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1); /* Schattenlinie über dem Footer */
 }
 
+/* Links im Footer */
 .footer a {
-    margin: 0 10px;
-    text-decoration: none;
-    color: #333;
+    margin: 0 10px; 
+    text-decoration: none; /* Entfernt die Unterstreichung von Links */
+    color: #333; 
 }
 
 .footer a:hover {
-    color: #007bff;
-    text-decoration: underline;
+    color: #007bff; /* Farbe der Links beim Hover */
+    text-decoration: underline; /* Unterstreichung beim Hover */
 }

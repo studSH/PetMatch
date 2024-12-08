@@ -1,10 +1,34 @@
-{% extends "base.html" %}
+{% extends "base.html" %} <!-- Erbe von base.html -->
 
-{% block content %}
+{% block content %} 
+<body class="seite-anmeldung"> <!-- Seitenstyling -->
 
-<body class="seite-anmeldung"></body>
-    <h2>Anmelden</h2>
-        <p>Hier können Sie sich anmelden</p>
+    <!-- Überschrift -->
+    <h2 class="text-center my-4">Anmelden</h2> <!-- Zentriertung oben und unten -->
+    <p class="text-center">Geben Sie Ihre Zugangsdaten ein, um sich anzumelden:</p> 
+
+    <!-- Container für das Anmeldeformular -->
+    <div class="container d-flex justify-content-center">
+        <!-- Formular für die Anmeldung -->
+        <form method="post" action="/anmeldung" style="width: 400px;"> <!-- POST-Methode für Dateneingabe, feste Breite -->
+            
+            <!-- Eingabefeld für E-Mail -->
+            <div class="mb-3">
+                <label for="email" class="form-label">E-Mail:</label> <!-- Beschriftung für das Eingabefeld -->
+                <input type="email" class="form-control" id="email" name="email" required style="height: 40px; font-size: 14px;"> <!-- Eingabefeld mit Validierung -->
+            </div>
+
+            <!-- Eingabefeld für Passwort -->
+            <div class="mb-3">
+                <label for="passwort" class="form-label">Passwort:</label> 
+                <input type="password" class="form-control" id="passwort" name="passwort" required style="height: 40px; font-size: 14px;"> 
+            </div>
+
+            <!-- Anmelde-Button -->
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary" style="width: 200px; font-size: 14px;">Anmelden</button> <!-- Zentrierter Button -->
+            </div>
+        </form>
+    </div>
 </body>
-
 {% endblock %}

@@ -1,9 +1,84 @@
-{% extends "base.html" %}
+{% extends "base.html" %} <!-- Erbe des base.html -->
 
-{% block content %}
+{% block content %} 
+<body class="seite-registrierung"> <!-- Seitenstyling -->
 
-<body class="seite-registerung"></body>
-    <h2>Registrieren</h2>
-        <p>Hier können Sie sich registrieren</p>
+    <!-- Überschrift -->
+    <h2 class="text-center my-4">Registrieren</h2> <!-- Zentrierunf oben und unten -->
+    <p class="text-center">Bitte füllen Sie die folgenden Felder aus, um sich zu registrieren:</p> 
+
+    <!-- Container für das Formular -->
+    <div class="container d-flex justify-content-center">
+        <!-- Formular für die Registrierung -->
+        <form method="post" action="/registrierung" style="width: 400px;"> <!-- POST-Methode für Dateneingabe, feste Breite für das Formular -->
+            
+            <!-- Eingabefeld für E-Mail -->
+            <div class="mb-2">
+                <label for="email" class="form-label">E-Mail:</label> <!-- Beschriftung für das Eingabefeld -->
+                <input type="email" class="form-control" id="email" name="email" required style="height: 40px; font-size: 14px;"> <!-- Eingabefeld mit Validierung -->
+            </div>
+
+            <!-- Eingabefeld für Benutzername -->
+            <div class="mb-2">
+                <label for="benutzername" class="form-label">Benutzername:</label>
+                <input type="text" class="form-control" id="benutzername" name="benutzername" required style="height: 40px; font-size: 14px;">
+            </div>
+
+            <!-- Eingabefeld für Passwort -->
+            <div class="mb-2">
+                <label for="passwort" class="form-label">Passwort:</label>
+                <input type="password" class="form-control" id="passwort" name="passwort" required style="height: 40px; font-size: 14px;">
+            </div>
+
+            <!-- Eingabefeld für Vorname -->
+            <div class="mb-2">
+                <label for="vorname" class="form-label">Vorname:</label>
+                <input type="text" class="form-control" id="vorname" name="vorname" required style="height: 40px; font-size: 14px;">
+            </div>
+
+            <!-- Eingabefeld für Nachname -->
+            <div class="mb-2">
+                <label for="nachname" class="form-label">Nachname:</label>
+                <input type="text" class="form-control" id="nachname" name="nachname" required style="height: 40px; font-size: 14px;">
+            </div>
+
+            <!-- Eingabefeld für Straße -->
+            <div class="mb-2">
+                <label for="strasse" class="form-label">Straße:</label>
+                <input type="text" class="form-control" id="strasse" name="strasse" required style="height: 40px; font-size: 14px;">
+            </div>
+
+            <!-- Eingabefeld für Hausnummer -->
+            <div class="mb-2">
+                <label for="hausnummer" class="form-label">Hausnummer:</label>
+                <input type="number" class="form-control" id="hausnummer" name="hausnummer" required style="height: 40px; font-size: 14px;">
+            </div>
+
+            <!-- Eingabefeld für Stadt -->
+            <div class="mb-2">
+                <label for="stadt" class="form-label">Stadt:</label>
+                <input type="text" class="form-control" id="stadt" name="stadt" required style="height: 40px; font-size: 14px;">
+            </div>
+
+            <!-- Eingabefeld für Postleitzahl -->
+            <div class="mb-2">
+                <label for="plz" class="form-label">PLZ:</label>
+                <input type="number" class="form-control" id="plz" name="plz" required style="height: 40px; font-size: 14px;">
+            </div>
+
+            <!-- Checkbox für Datenschutzerklärung -->
+            <div class="form-check mb-3">
+                <input type="checkbox" class="form-check-input" id="datenschutz" name="datenschutz" required> <!-- Pflichtfeld -->
+                <label class="form-check-label" for="datenschutz">
+                    Bitte bestätige, dass du unserer Datenschutzerklärung zustimmst
+                </label>
+            </div>
+
+            <!-- Registrieren-Button -->
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary" style="width: 200px; font-size: 14px;">Registrieren</button> <!-- Zentrierter Button -->
+            </div>
+        </form>
+    </div>
 </body>
 {% endblock %}
