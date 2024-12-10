@@ -1,37 +1,95 @@
-# https://flask-ptbr.readthedocs.io/en/latest/quickstart.html
-# Importiere die Flask-Klasse und Jinja-Templates aus dem Flask-Modul
-from flask import Flask, render_template
 
-# Erstelle eine Instanz der Flask-Klasse, die die Webanwendung repräsentiert
+from flask import Flask, render_template, request, redirect, url_for
+from flask_sqlalchemy import SQLAlchemy
+import os
+
+
 app = Flask(__name__)
 
-# Dekoriere die Funktion `home` mit der Route `/`, die die Startseite der Anwendung definiert
+# aktuelles Verzeichnis (app.py oder db.py)
+basedir = os.path.abspath(os.path.dirname(__file__))
+
+# SQLite-Datenbank (Datenbank wird im gleichen Verzeichnis wie db.py erstellt)
+app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{os.path.join(basedir, "petmatch.db")}'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False  # Vermeidet unnötige Warnungen
+
+# SQLAlchemy-Instanz initialisieren
+db = SQLAlchemy(app)
+
+# Definition der Tabelle 'Benutzer'
+class Benutzer(db.Model):
+    email = db.Column(db.String, primary_key=True)
+    benutzername = db.Column(db.String, nullable=False)
+    passwort = db.Column(db.String, nullable=False)
+
+# Startseite
 @app.route("/")
 def index():
-    # Diese Funktion wird ausgeführt, wenn jemand die Startseite besucht
     return render_template("index.html", title="Startseite")
 
-@app.route("/registrierung")
+# Registrierung
+@app.route("/registrierung", methods=['GET', 'POST'])
 def registrierung():
+    if request.method == 'POST':
+        # Daten aus dem Formular erhalten
+        email = request.form['email']
+        email_wiederholen = request.form['email_wiederholen']
+        benutzername = request.form['benutzername']
+        passwort = request.form['passwort']
+
+        # Überprüfen, ob die E-Mails übereinstimmen
+        if email != email_wiederholen:
+            return "Die E-Mail-Adressen stimmen nicht überein. Bitte versuche es erneut."
+
+        # Benutzer in die Datenbank einfügen
+        neuer_benutzer = Benutzer(email=email, benutzername=benutzername, passwort=passwort)
+        try:
+            db.session.add(neuer_benutzer)
+            db.session.commit()
+            return redirect(url_for('index'))  # Weiterleitung nach erfolgreicher Registrierung
+        except Exception as e:
+            db.session.rollback()
+            return f"Fehler bei der Registrierung: {e}"
+
     return render_template("registrierung.html", title="Registrieren")
 
-@app.route("/anmeldung")
+# Anmeldung
+@app.route("/anmeldung", methods=['GET', 'POST'])
 def anmeldung():
+    if request.method == 'POST':
+        email = request.form['email']
+        passwort = request.form['passwort']
+
+        # Überprüfung der Benutzeranmeldedaten
+        benutzer = Benutzer.query.filter_by(email=email, passwort=passwort).first()
+
+        if benutzer:
+            return redirect(url_for('index'))  # Weiterleitung bei erfolgreicher Anmeldung
+        else:
+            return "Ungültige Anmeldedaten. Bitte versuche es erneut."
+
     return render_template("anmeldung.html", title="Anmelden")
 
+# Kontakt
 @app.route("/kontakt")
 def kontakt():
     return render_template("kontakt.html", title="Kontakt")
 
+# Impressum
 @app.route("/impressum")
 def impressum():
     return render_template("impressum.html", title="Impressum")
 
+# Datenschutz
 @app.route("/datenschutz")
 def datenschutz():
     return render_template("datenschutz.html", title="Datenschutz")
 
-# Prüfe, ob das Skript direkt ausgeführt wird (nicht importiert) 
+# Prüfe, ob das Skript direkt ausgeführt wird (nicht importiert)
 if __name__ == "__main__":
-    # Starte die Flask-Anwendung im Debug-Modus, damit Änderungen ohne Neustart übernommen werden
+    # Erstellt alle Tabellen (falls sie noch nicht existieren)
+    with app.app_context():
+        db.create_all()
+
+    # Start Flask-Anwendung im Debug-Modus, damit Änderungen ohne Neustart übernommen werden
     app.run(debug=True)

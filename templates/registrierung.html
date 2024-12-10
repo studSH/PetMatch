@@ -1,21 +1,47 @@
-{% extends "base.html" %} <!-- Erbe des base.html -->
+{% extends "base.html" %} <!-- Erbe base.html -->
 
 {% block content %} 
 <body class="seite-registrierung"> <!-- Seitenstyling -->
 
     <!-- Überschrift -->
-    <h2 class="text-center my-4">Registrieren</h2> <!-- Zentrierunf oben und unten -->
+    <h2 class="text-center my-4">Registrieren</h2> <!-- Zentrierung oben und unten -->
     <p class="text-center">Bitte füllen Sie die folgenden Felder aus, um sich zu registrieren:</p> 
 
     <!-- Container für das Formular -->
     <div class="container d-flex justify-content-center">
         <!-- Formular für die Registrierung -->
         <form method="post" action="/registrierung" style="width: 400px;"> <!-- POST-Methode für Dateneingabe, feste Breite für das Formular -->
-            
+
+            <!-- Textbereich für die Nutzungsbedingungen -->
+            <div class="mb-3">
+                <label for="nutzerbedingungen" class="form-label">Nutzungsbedingungen</label>
+
+                <!-- Scrollbares Textfeld -->
+                <textarea class="form-control" id="nutzerbedingungen" name="nutzerbedingungen" rows="6" readonly style="font-size: 14px; overflow-y: scroll; resize: none; text-align: left;">
+                1. Der Nutzer verpflichtet sich, die Plattform nur für legale Zwecke zu nutzen.
+
+                2. Der Nutzer muss wahrheitsgemäße Informationen angeben und ist für die Richtigkeit seiner Daten verantwortlich.
+
+                3. Der Betreiber der Seite übernimmt keine Haftung für Verluste oder Schäden, die durch die Nutzung der Seite entstehen.
+
+                3. Der Nutzer stimmt zu, keine beleidigenden, diffamierenden oder anderweitig schädlichen Inhalte hochzuladen oder zu verbreiten.
+
+                4. Der Betreiber behält sich das Recht vor, Benutzerkonten zu sperren, die gegen die Nutzungsbedingungen verstoßen.
+
+                5. Weitere Bedingungen, wie Datenschutzbestimmungen, können gesondert aufgeführt werden.
+                </textarea>
+            </div>
+
             <!-- Eingabefeld für E-Mail -->
             <div class="mb-2">
                 <label for="email" class="form-label">E-Mail:</label> <!-- Beschriftung für das Eingabefeld -->
                 <input type="email" class="form-control" id="email" name="email" required style="height: 40px; font-size: 14px;"> <!-- Eingabefeld mit Validierung -->
+            </div>
+
+            <!-- Eingabefeld für E-Mail (wiederholen) -->
+            <div class="mb-2">
+                <label for="email_wiederholen" class="form-label">E-Mail wiederholen:</label>
+                <input type="email" class="form-control" id="email_wiederholen" name="email_wiederholen" required style="height: 40px; font-size: 14px;"> 
             </div>
 
             <!-- Eingabefeld für Benutzername -->
@@ -28,42 +54,6 @@
             <div class="mb-2">
                 <label for="passwort" class="form-label">Passwort:</label>
                 <input type="password" class="form-control" id="passwort" name="passwort" required style="height: 40px; font-size: 14px;">
-            </div>
-
-            <!-- Eingabefeld für Vorname -->
-            <div class="mb-2">
-                <label for="vorname" class="form-label">Vorname:</label>
-                <input type="text" class="form-control" id="vorname" name="vorname" required style="height: 40px; font-size: 14px;">
-            </div>
-
-            <!-- Eingabefeld für Nachname -->
-            <div class="mb-2">
-                <label for="nachname" class="form-label">Nachname:</label>
-                <input type="text" class="form-control" id="nachname" name="nachname" required style="height: 40px; font-size: 14px;">
-            </div>
-
-            <!-- Eingabefeld für Straße -->
-            <div class="mb-2">
-                <label for="strasse" class="form-label">Straße:</label>
-                <input type="text" class="form-control" id="strasse" name="strasse" required style="height: 40px; font-size: 14px;">
-            </div>
-
-            <!-- Eingabefeld für Hausnummer -->
-            <div class="mb-2">
-                <label for="hausnummer" class="form-label">Hausnummer:</label>
-                <input type="number" class="form-control" id="hausnummer" name="hausnummer" required style="height: 40px; font-size: 14px;">
-            </div>
-
-            <!-- Eingabefeld für Stadt -->
-            <div class="mb-2">
-                <label for="stadt" class="form-label">Stadt:</label>
-                <input type="text" class="form-control" id="stadt" name="stadt" required style="height: 40px; font-size: 14px;">
-            </div>
-
-            <!-- Eingabefeld für Postleitzahl -->
-            <div class="mb-2">
-                <label for="plz" class="form-label">PLZ:</label>
-                <input type="number" class="form-control" id="plz" name="plz" required style="height: 40px; font-size: 14px;">
             </div>
 
             <!-- Checkbox für Datenschutzerklärung -->
