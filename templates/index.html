@@ -1,7 +1,23 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h2>Willkommen bei PetMatch!</h2>
-<p>Hier können Sie Spielkameraden für Ihr Haustier finden</p>
+<!-- Bild: PetMatch-Logo -->
+<div style="text-align: center; margin-bottom: 20px;">
+    <!-- Pfad Bild mit Unterordner bilder -->
+    <img src="{{ url_for('static', filename='bilder/petmatch_logo_transparent.png') }}" alt="PetMatch Logo" style="width: 50%; height: auto; max-width: 100%; max-height: 100%;">
+</div>
+
+<!-- Begrüßungstext -->
+<div style="text-align: center; padding: 20px; font-size: 18px;">
+    <p>Willkommen bei PetMatch!</p> 
+        
+    <p>Hier verbinden wir Haustierbesitzer mit anderen Tierhaltern, um Spielkameraden für ihre Haustiere zu finden. Unsere Plattform ermöglicht es Ihnen, unkompliziert und sicher andere Tierhalter in Ihrer Nähe zu finden. Ob Hund, Katze oder Maus, wir helfen dabei die besten Spielpartner für Ihr Tier zu finden.</p>
+
+    <p>PetMatch ist eine Community, in der Sie neue Freunde für Ihre Haustiere finden. Unsere Mission ist es, den Alltag von Tieren zu bereichern, dass Wohl der Tiere zu fördern und gleichzeitig dem Halter die Möglichkeit geben sich zu connecten.</p>
+
+    <p>Tauscht eure Erfahrungen und Lieblingsspielspots untereinander aus. Wir möchten, dass jedes Haustier die Gesellschaft und den Spaß hat, den es verdient.</p>
+    
+    <p>Wir hoffen, dass PetMatch Ihnen dabei hilft, neue Spielkameraden und Freunde für Ihr Haustier zu finden!</p>
+</div>
 
 {% endblock %}
