@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Du bist eingeloggt</h2>
+<p>Hier können Sie Spielkameraden für Ihr Haustier finden</p>
+
+<!-- Formular, das beim Klicken auf das Bild abgeschickt wird -->
+<form method="POST" action="{{ url_for('feed') }}">
+    <div class="d-flex justify-content-end mt-5">
+        <button type="submit" name="open_menu" style="background: none; border: none;">
+            <img src="static/bilder/profilbild-platzhalter.png" class="rounded" alt="Profilbild">
+        </button>
+    </div>
+</form>
+
+<!-- Menü, das angezeigt wird, wenn menu_open=True -->
+{% if menu_open %}
+    <div id="menu" class="dropdown-menu">
+        <div class="menu-item">
+            <img src="{{ url_for('static', filename='bilder/profil-icon.png') }}" alt="Profil anzeigen" class="menu-icon">
+            <a class="dropdown-item" href="{{ url_for('profil_anzeigen') }}">Profil anzeigen</a>
+        </div>
+        <div class="menu-item">
+            <img src="{{ url_for('static', filename='bilder/profil-bearbeiten-icon.png') }}" alt="Profil bearbeiten" class="menu-icon">
+            <a class="dropdown-item" href="{{ url_for('profil_bearbeiten') }}">Profil bearbeiten</a>
+        </div>
+        <div class="menu-item">
+            <img src="{{ url_for('static', filename='bilder/beitraege-icon.png') }}" alt="Beitrag erstellen" class="menu-icon">
+            <a class="dropdown-item" href="{{ url_for('beitraege_erstellen') }}">Beitrag erstellen</a>
+        </div>
+
+        <!-- Menü schließen, als normaler Menüeintrag -->
+        <div class="menu-item">
+            <img src="{{ url_for('static', filename='bilder/close-icon.png') }}" class="menu-icon" alt="Menü schließen">
+            <a class="dropdown-item" href="{{ url_for('feed') }}">Menü schließen</a>
+        </div>
+    </div>
+{% endif %}
+
+{% endblock %}

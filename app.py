@@ -64,7 +64,7 @@ def anmeldung():
         benutzer = Benutzer.query.filter_by(email=email, passwort=passwort).first()
 
         if benutzer:
-            return redirect(url_for('index'))  # Weiterleitung bei erfolgreicher Anmeldung
+            return redirect(url_for('feed'))  # Weiterleitung bei erfolgreicher Anmeldung
         else:
             return "Ungültige Anmeldedaten. Bitte versuche es erneut."
 
@@ -74,6 +74,37 @@ def anmeldung():
 @app.route("/kontakt")
 def kontakt():
     return render_template("kontakt.html", title="Kontakt")
+
+@app.route('/feed', methods=['GET', 'POST'])
+def feed():
+    menu_open = False
+    if request.method == 'POST':
+        # Wenn der Benutzer auf das Bild klickt, Menü öffnen
+        if 'open_menu' in request.form:
+            menu_open = True
+        # Wenn der Benutzer "Menü schließen" klickt, Menü schließen
+        elif 'close_menu' in request.form:
+            menu_open = False
+    return render_template('feed.html', menu_open=menu_open)
+
+
+# Route für 'Profil anzeigen'
+@app.route("/profil_anzeigen")
+def profil_anzeigen():
+    # Hier kannst du Logik hinzufügen, um Benutzerdaten zu laden
+    return render_template("profil_anzeigen.html", title="Profil anzeigen")
+
+# Route für 'Profil bearbeiten'
+@app.route("/profil_bearbeiten")
+def profil_bearbeiten():
+    # Hier kannst du Logik hinzufügen, um Benutzerdaten zum Bearbeiten zu laden
+    return render_template("profil_bearbeiten.html", title="Profil bearbeiten")
+
+# Route für 'Beitrag erstellen'
+@app.route("/beitraege_erstellen")
+def beitraege_erstellen():
+    # Hier kannst du Logik hinzufügen, um die Beitragsseite zu rendern
+    return render_template("beitraege_erstellen.html", title="Beitrag erstellen")
 
 # Impressum
 @app.route("/impressum")
