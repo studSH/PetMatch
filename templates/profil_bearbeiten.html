@@ -23,38 +23,41 @@
 
                     <div class="mb-3">
                         <label for="tier_name" class="form-label">Name:</label>
-                        <input type="text" class="form-control" id="tier_name" name="tier_name" required>
+                        <input type="text" class="form-control" id="tier_name" name="tier_name" required
+                            value="{{ tier.tier_name if tier else '' }}">
                     </div>
 
                     <div class="mb-3">
                         <label for="geburtsdatum" class="form-label">Geburtsdatum:</label>
-                        <input type="date" class="form-control" id="geburtsdatum" name="geburtsdatum">
+                        <input type="date" class="form-control" id="geburtsdatum" name="geburtsdatum"
+                            value="{{ tier.geburtsdatum if tier and tier.geburtsdatum else '' }}">
                     </div>
 
                     <div class="mb-3">
                         <label for="rasse" class="form-label">Rasse:</label>
-                        <input type="text" class="form-control" id="rasse" name="rasse" required>
+                        <input type="text" class="form-control" id="rasse" name="rasse" required
+                            value="{{ tier.rasse if tier else '' }}">
                     </div>
 
                     <div class="mb-3">
                         <label for="kastriert" class="form-label">Kastriert:</label>
-                        <select class="form-control" id="kastriert" name="kastriert">
-                            <option value="">Bitte wählen</option>
-                            <option value="ja">Ja</option>
-                            <option value="nein">Nein</option>
+                        <select class="form-control" id="kastriert" name="kastriert" >
+                            <option value="" {% if not tier or not tier.kastriert %}selected{% endif %}>Bitte wählen</option>
+                            <option value="ja" {% if tier and tier.kastriert == 'ja' %}selected{% endif %}>Ja</option>
+                            <option value="nein" {% if tier and tier.kastriert == 'nein' %}selected{% endif %}>Nein</option>
                         </select>
                     </div>
 
                     <div class="mb-3">
                         <label for="das_mag_ich" class="form-label">Das mag ich:</label>
                         <textarea class="form-control" id="das_mag_ich" name="das_mag_ich" rows="2"
-                            placeholder="z.B. Ich mag Weibchen und kleine Hunde."></textarea>
+                            placeholder="z.B. Ich mag Weibchen und kleine Hunde.">{{ tier.das_mag_ich if tier else '' }}</textarea>
                     </div>
 
                     <div class="mb-3">
                         <label for="das_mag_ich_nicht" class="form-label">Das mag ich nicht:</label>
                         <textarea class="form-control" id="das_mag_ich_nicht" name="das_mag_ich_nicht" rows="2"
-                            placeholder="z.B. Ich mag keine großen Hunde."></textarea>
+                            placeholder="z.B. Ich mag keine großen Hunde.">{{ tier.das_mag_ich_nicht if tier else '' }}</textarea>
                     </div>
                 </div>
             </div>
@@ -66,31 +69,35 @@
 
                     <div class="mb-3">
                         <label for="name" class="form-label">Name:</label>
-                        <input type="text" class="form-control" id="name" name="name" required>
+                        <input type="text" class="form-control" id="name" name="name" required
+                            value="{{ halter.name if halter else '' }}">
                     </div>
 
                     <div class="mb-3">
                         <label for="plz" class="form-label">PLZ:</label>
-                        <input type="number" class="form-control" id="plz" name="plz">
+                        <input type="number" class="form-control" id="plz" name="plz"
+                            value="{{ halter.plz if halter else '' }}">
                     </div>
 
                     <div class="mb-3">
                         <label for="stadt" class="form-label">Stadt:</label>
-                        <input type="text" class="form-control" id="stadt" name="stadt">
+                        <input type="text" class="form-control" id="stadt" name="stadt"
+                            value="{{ halter.stadt if halter else '' }}">
                     </div>
 
                     <div class="mb-3">
                         <label for="strasse" class="form-label">Adresse:</label>
-                        <input type="text" class="form-control" id="strasse" name="strasse">
+                        <input type="text" class="form-control" id="strasse" name="strasse"
+                            value="{{ halter.strasse if halter else '' }}">
                     </div>
 
                     <div class="mb-3">
                         <label for="geschlecht" class="form-label">Geschlecht:</label>
                         <select class="form-control" id="geschlecht" name="geschlecht">
-                            <option value="">Bitte wählen</option>
-                            <option value="männlich">Männlich</option>
-                            <option value="weiblich">Weiblich</option>
-                            <option value="divers">Divers</option>
+                            <option value="" {% if not halter or not halter.geschlecht %}selected{% endif %}>Bitte wählen</option>
+                            <option value="männlich" {% if halter and halter.geschlecht == 'männlich' %}selected{% endif %}>Männlich</option>
+                            <option value="weiblich" {% if halter and halter.geschlecht == 'weiblich' %}selected{% endif %}>Weiblich</option>
+                            <option value="divers" {% if halter and halter.geschlecht == 'divers' %}selected{% endif %}>Divers</option>
                         </select>
                     </div>
                 </div>

@@ -45,8 +45,3 @@ class Bild(db.Model):
     bild = db.Column(db.LargeBinary)
     beschreibung = db.Column(db.String)
 
-# Datenbanktabellen erstellen
-if __name__ == "__main__":
-    with app.app_context():
-        db.create_all()  # Erstellt alle Tabellen, falls sie noch nicht existieren
-        print("Datenbank erfolgreich erstellt!")
