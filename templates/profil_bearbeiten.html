@@ -1,7 +1,106 @@
-{% extends "base.html" %}
+{% extends "base.html" %} <!-- Erbt von base.html -->
 
 {% block content %}
-<h2>Profil bearbeiten</h2>
-<p>Hier kannst du deine Profilinformationen bearbeiten.</p>
-<!-- Formular oder Inhalt für das Bearbeiten des Profils -->
+
+<body class="seite-profil-erstellen">
+    <!-- Überschrift -->
+    <h2 class="text-center my-4">Mein Profil</h2> <!-- Zentrierung und Abstände -->
+
+    <div class="container mt-5">
+        <!-- Formular für das Bearbeiten eines Profils -->
+        <form method="post" action="/profil_bearbeiten" enctype="multipart/form-data">
+            <!-- multipart für Bild-Upload -->
+            <div class="row">
+                <!-- Bild und Bearbeiten-Button -->
+                <div class="col-md-4 text-center d-flex flex-column align-items-center">
+                    <button type="button" class="btn btn-secondary mb-3">Bearbeiten</button>
+                    <img src="{{ url_for('static', filename='bilder/profilbild-platzhalter.png') }}" alt="Profilbild"
+                        class="img-fluid" style="border: 1px solid #ccc; border-radius: 10px;">
+                </div>
+                <!-- Eingabefelder: Tierdaten -->
+                <div class="col-md-8">
+                    <h4 class="mb-3">Tier</h4>
+
+                    <div class="mb-3">
+                        <label for="tier_name" class="form-label">Name:</label>
+                        <input type="text" class="form-control" id="tier_name" name="tier_name" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="geburtsdatum" class="form-label">Geburtsdatum:</label>
+                        <input type="date" class="form-control" id="geburtsdatum" name="geburtsdatum">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="rasse" class="form-label">Rasse:</label>
+                        <input type="text" class="form-control" id="rasse" name="rasse" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="kastriert" class="form-label">Kastriert:</label>
+                        <select class="form-control" id="kastriert" name="kastriert">
+                            <option value="">Bitte wählen</option>
+                            <option value="ja">Ja</option>
+                            <option value="nein">Nein</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="das_mag_ich" class="form-label">Das mag ich:</label>
+                        <textarea class="form-control" id="das_mag_ich" name="das_mag_ich" rows="2"
+                            placeholder="z.B. Ich mag Weibchen und kleine Hunde."></textarea>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="das_mag_ich_nicht" class="form-label">Das mag ich nicht:</label>
+                        <textarea class="form-control" id="das_mag_ich_nicht" name="das_mag_ich_nicht" rows="2"
+                            placeholder="z.B. Ich mag keine großen Hunde."></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Eingabefelder: Halterdaten -->
+            <div class="row mt-5">
+                <div class="col-md-6">
+                    <h4 class="mb-3">Halter</h4>
+
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Name:</label>
+                        <input type="text" class="form-control" id="name" name="name" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="plz" class="form-label">PLZ:</label>
+                        <input type="number" class="form-control" id="plz" name="plz">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="stadt" class="form-label">Stadt:</label>
+                        <input type="text" class="form-control" id="stadt" name="stadt">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="strasse" class="form-label">Adresse:</label>
+                        <input type="text" class="form-control" id="strasse" name="strasse">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="geschlecht" class="form-label">Geschlecht:</label>
+                        <select class="form-control" id="geschlecht" name="geschlecht">
+                            <option value="">Bitte wählen</option>
+                            <option value="männlich">Männlich</option>
+                            <option value="weiblich">Weiblich</option>
+                            <option value="divers">Divers</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Button zum Abschicken -->
+            <div class="text-center mt-4">
+                <button type="submit" class="btn btn-primary" style="width: 200px;">Speichern</button>
+            </div>
+        </form>
+    </div>
+</body>
 {% endblock %}
