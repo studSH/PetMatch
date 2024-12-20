@@ -1,20 +1,9 @@
-from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
-import os
 
-# Flask-App 
-app = Flask(__name__)
+# SQLAlchemy-Instanz ohne App-Erstellung
+db = SQLAlchemy()
 
-# SQLite-Datenbank konfigurieren
-# Pfad zur Datenbank, da wo Verzeichnis von db.py
-base_dir = os.path.abspath(os.path.dirname(__file__))
-app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{os.path.join(base_dir, "petmatch.db")}'
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False  # Vermeidet unnötige Warnungen
-
-# SQLAlchemy 
-db = SQLAlchemy(app)
-
-# Tabellen definieren
+# Tabellen definierenA
 class Benutzer(db.Model):
     email = db.Column(db.String, primary_key=True)
     benutzername = db.Column(db.String, nullable=False)
