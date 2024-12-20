@@ -76,3 +76,40 @@ body {
     color: #007bff; /* Farbe der Links beim Hover */
     text-decoration: underline; /* Unterstreichung beim Hover */
 }
+
+/* Styling für das Menü in der Feed-Seite */
+#menu {
+    display: block;
+    position: absolute;
+    top: 50px;
+    right: 20px;
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 200px;
+    z-index: 9999; /* Sicherstellen, dass das Menü über anderen Elementen liegt */
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    padding: 5px 0;
+}
+
+.menu-item .menu-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.menu-item a {
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+}
+
+.menu-item a:hover {
+    color: #007bff;
+}
