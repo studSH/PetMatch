@@ -3,9 +3,6 @@ title: Design Entscheidung
 nav_order: 3
 ---
 
-{: .label }
-[Jane Dane]
-
 {: .no_toc }
 # Design Entscheidung
 
@@ -140,6 +137,77 @@ Dementsprechend können wir auch gut auf den Sicherheitsmechanismus von Firebase
 - SQLite: [https://www.computerwoche.de/article/2834389/6-gute-gruende-fuer-sqlite.html](https://www.computerwoche.de/article/2834389/6-gute-gruende-fuer-sqlite.html)
 - Firebase: [https://blog.back4app.com/de/was-ist-firebase/](https://blog.back4app.com/de/was-ist-firebase/)  
 Zugriff 29-Nov-2024
+
+### Designentscheidung: Einführung von Branch-Management und `.gitignore`
+
+#### **Meta**
+- **Status:** Entschieden
+- **Datum:** 29. November 2024
+- **Entscheidung getroffen von:** Simone Heinrich, Patryk Kujawski
+
+---
+
+### **Problemstellung**
+Zu Beginn der Arbeit am Projekt haben wir beide direkt auf der `main`-Branch gearbeitet. Dies führte zu erheblichen Problemen:
+- Gleichzeitige Änderungen führten regelmäßig zu Konflikten, die manuell gelöst werden mussten.
+- Fehlende `.gitignore`-Datei führte dazu, dass automatisch generierte Dateien wie `__pycache__` getrackt wurden, was das Repository unnötig aufgebläht hat.
+- Zeitverlust durch ständige Konfliktlösung und Überprüfungen, bevor Änderungen gepusht werden konnten.
+
+---
+
+### **Betrachtete Optionen**
+| Kriterium                        | Arbeiten direkt auf `main`           | Einführung von Branch-Management    |
+|----------------------------------|--------------------------------------|-------------------------------------|
+| **Konflikte minimieren**         | ❌ Häufige Konflikte beim Pullen und Pushen | ✔️ Reduzierte Konflikte durch isolierte Branches |
+| **Codequalität**                 | ❌ Keine Möglichkeit, Änderungen vorab zu testen | ✔️ Änderungen können vor Merge überprüft werden |
+| **Lernaufwand**                  | ✔️ Kein zusätzlicher Aufwand          | ❌ Einführung von Git-Workflows erforderlich |
+| **Effizienz bei Teamarbeit**     | ❌ Gering, da Konflikte manuell gelöst werden müssen | ✔️ Verbesserte Effizienz durch paralleles Arbeiten |
+| **Nachvollziehbarkeit der Änderungen** | ❌ Änderungen schwer zuzuordnen       | ✔️ Klare Commit-Historie pro Feature |
+
+---
+
+### **Entscheidung**
+Wir haben uns entschieden, ein Branch-Management-System einzuführen und eine `.gitignore`-Datei hinzuzufügen.
+
+#### **Begründung:**
+- **Branch-Management:**
+  - Jeder arbeitet auf einem eigenen Branch (z. B. `feature-login` oder `feature-profile`), um Änderungen voneinander zu trennen.
+  - Die `main`-Branch bleibt stabil und enthält nur funktionierenden Code.
+  - Konflikte werden minimiert, da Änderungen unabhängig entwickelt und nach Abschluss gemerged werden.
+
+- **.gitignore:**
+  - Eine `.gitignore`-Datei verhindert, dass automatisch generierte Dateien wie `__pycache__` oder andere temporäre Dateien getrackt werden.
+  - Dies reduziert die Größe des Repositories und sorgt für eine saubere Commit-Historie.
+
+---
+
+### **Schritte zur Umsetzung**
+1. **Einführung von Branch-Management:**
+   - Jeder erstellt vor Änderungen einen neuen Branch mit:
+     ```bash
+     git checkout -b feature-name
+     ```
+   - Nach Abschluss des Features wird der Branch in `main` gemerged:
+     ```bash
+     git checkout main
+     git pull origin main
+     git merge feature-name
+     git push origin main
+     ```
+
+2. **Erstellung der `.gitignore`:**
+   - Eine `.gitignore`-Datei wurde hinzugefügt mit Einträgen wie:
+     ```
+     __pycache__/
+     *.pyc
+     *.log
+     ```
+   - Dadurch werden unerwünschte Dateien vom Tracking ausgeschlossen.
+
+---
+
+### **Zusammenfassung**
+Die Einführung des Branch-Managements und der `.gitignore`-Datei hat die Zusammenarbeit im Projekt erheblich verbessert. Konflikte treten seltener auf, und die Commit-Historie ist klarer nachvollziehbar. Dieser Workflow ermöglicht es, effizienter und strukturierter zu arbeiten, während die Codequalität auf der `main`-Branch stets gewährleistet bleibt.
 
 # Entscheidung für Formularverwaltung (WTForms vs. Keine zusätzliche Abhängigkeit)
 
