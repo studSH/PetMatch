@@ -138,16 +138,16 @@ Dementsprechend können wir auch gut auf den Sicherheitsmechanismus von Firebase
 - Firebase: [https://blog.back4app.com/de/was-ist-firebase/](https://blog.back4app.com/de/was-ist-firebase/)  
 Zugriff 29-Nov-2024
 
-### Designentscheidung: Einführung von Branch-Management und `.gitignore`
+# Designentscheidung: Einführung von Branch-Management und `.gitignore`
 
-#### **Meta**
+### Meta
 - **Status:** Entschieden
-- **Datum:** 29. November 2024
+- **Datum:** 30. November 2024
 - **Entscheidung getroffen von:** Simone Heinrich, Patryk Kujawski
 
 ---
 
-### **Problemstellung**
+### Problemstellung
 Zu Beginn der Arbeit am Projekt haben wir beide direkt auf der `main`-Branch gearbeitet. Dies führte zu erheblichen Problemen:
 - Gleichzeitige Änderungen führten regelmäßig zu Konflikten, die manuell gelöst werden mussten.
 - Fehlende `.gitignore`-Datei führte dazu, dass automatisch generierte Dateien wie `__pycache__` getrackt wurden, was das Repository unnötig aufgebläht hat.
@@ -155,7 +155,6 @@ Zu Beginn der Arbeit am Projekt haben wir beide direkt auf der `main`-Branch gea
 
 ---
 
-### **Betrachtete Optionen**
 | Kriterium                        | Arbeiten direkt auf `main`           | Einführung von Branch-Management    |
 |----------------------------------|--------------------------------------|-------------------------------------|
 | **Konflikte minimieren**         | ❌ Häufige Konflikte beim Pullen und Pushen | ✔️ Reduzierte Konflikte durch isolierte Branches |
@@ -163,13 +162,15 @@ Zu Beginn der Arbeit am Projekt haben wir beide direkt auf der `main`-Branch gea
 | **Lernaufwand**                  | ✔️ Kein zusätzlicher Aufwand          | ❌ Einführung von Git-Workflows erforderlich |
 | **Effizienz bei Teamarbeit**     | ❌ Gering, da Konflikte manuell gelöst werden müssen | ✔️ Verbesserte Effizienz durch paralleles Arbeiten |
 | **Nachvollziehbarkeit der Änderungen** | ❌ Änderungen schwer zuzuordnen       | ✔️ Klare Commit-Historie pro Feature |
+| **Repositories und Datenaufblähung** | ❌ Kein Mechanismus, um unerwünschte Dateien wie `__pycache__` auszuschließen | ✔️ `.gitignore` verhindert Tracking unnötiger Dateien |
+| **Skalierbarkeit**               | ❌ Ungeeignet für größere Teams, da Konflikte zunehmen | ✔️ Ermöglicht paralleles Arbeiten, auch bei großen Projekten |
+| **Zeitaufwand für Problemlösungen** | ❌ Hoher Aufwand durch manuelle Konfliktlösung | ✔️ Geringer durch klarere Struktur und isolierte Branches |
 
----
 
-### **Entscheidung**
+### Entscheidung
 Wir haben uns entschieden, ein Branch-Management-System einzuführen und eine `.gitignore`-Datei hinzuzufügen.
 
-#### **Begründung:**
+#### Begründung:
 - **Branch-Management:**
   - Jeder arbeitet auf einem eigenen Branch (z. B. `feature-login` oder `feature-profile`), um Änderungen voneinander zu trennen.
   - Die `main`-Branch bleibt stabil und enthält nur funktionierenden Code.
@@ -181,8 +182,8 @@ Wir haben uns entschieden, ein Branch-Management-System einzuführen und eine `.
 
 ---
 
-### **Schritte zur Umsetzung**
-1. **Einführung von Branch-Management:**
+### Schritte zur Umsetzung
+1. Einführung von Branch-Management:
    - Jeder erstellt vor Änderungen einen neuen Branch mit:
      ```bash
      git checkout -b feature-name
@@ -195,9 +196,9 @@ Wir haben uns entschieden, ein Branch-Management-System einzuführen und eine `.
      git push origin main
      ```
 
-2. **Erstellung der `.gitignore`:**
+2. Erstellung der `.gitignore`:
    - Eine `.gitignore`-Datei wurde hinzugefügt mit Einträgen wie:
-     ```
+     ```gitignore
      __pycache__/
      *.pyc
      *.log
@@ -206,8 +207,13 @@ Wir haben uns entschieden, ein Branch-Management-System einzuführen und eine `.
 
 ---
 
-### **Zusammenfassung**
+### Zusammenfassung
 Die Einführung des Branch-Managements und der `.gitignore`-Datei hat die Zusammenarbeit im Projekt erheblich verbessert. Konflikte treten seltener auf, und die Commit-Historie ist klarer nachvollziehbar. Dieser Workflow ermöglicht es, effizienter und strukturierter zu arbeiten, während die Codequalität auf der `main`-Branch stets gewährleistet bleibt.
+
+### Quellen
+- Git Branching: https://git-scm.com/book/de/v2/Git-Branching-Branches-auf-einen-Blick
+- .gitignore: https://www.atlassian.com/git/tutorials/saving-changes/gitignore
+Zugriff 28-Nov-2024
 
 # Entscheidung für Formularverwaltung (WTForms vs. Keine zusätzliche Abhängigkeit)
 
