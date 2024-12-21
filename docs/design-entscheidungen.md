@@ -140,7 +140,7 @@ Zugriff 29-Nov-2024
 
 # Designentscheidung: Einführung von Branch-Management und `.gitignore`
 
-#### Meta
+### Meta
 - **Status:** Entschieden
 - **Datum:** 30. November 2024
 - **Entscheidung getroffen von:** Simone Heinrich, Patryk Kujawski
