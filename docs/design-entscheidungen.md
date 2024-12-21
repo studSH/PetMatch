@@ -290,6 +290,26 @@ Wir **entscheiden uns für Bootstrap**.
 ## Fazit
 Bootstrap ist ideal, um mit wenig Aufwand ein konsistentes und modernes Design zu erreichen, das unseren UI-Anforderungen gerecht wird. Der zusätzliche Lernaufwand ist minimal im Vergleich zum Nutzen für das Projekt.
 
+## Problemstellung
+
+Bei der Umsetzung des MVPs ist aufgefallen, dass zusätzliche Routen erforderlich sind, um die Projektvoraussetzungen zu erfüllen und um alle geplanten Funktionen abzubilden. Für den Bereich „Mein Profil“ benötigen wir sowohl eine Route zum Anzeigen als auch eine Route zum Bearbeiten des Profils. Darüber hinaus müssen wir für die Umwandlung von Adressen in Längen- und Breitengrade zusätzliche Backend-Routen (z. B. sowas wie „api-konvertiert“ und „api-feed“) einrichten. Für die Übersichtlichkeit sollten Standardrouten wie Datenschutz, Impressum und Kontakt auch hinzugefügt werden.
+
+Eine Herausforderung wird es sein, die neuen Routen sinnvoll in die Architektur zu integrieren, ohne die Arbeitsaufteilung aus dem Gleichgewicht zu bringen. Gleichzeitig sollen die Änderungen so vorgenommen werden, dass künftige Anpassungen an Hauptseiten oder zusätzlichen Backend-Funktionalitäten problemlos möglich sind.
+
+### Betrachtete Optionen
+
+| **Option**                                  | **Bewertung**                                                                                     |
+|---------------------------------------------|---------------------------------------------------------------------------------------------------|
+| **Keine neuen Routen hinzufügen**           | Keine Option, da dann das MVP unvollständig sein wird                                            |
+| **Alle neuen Routen von einer Person bearbeiten lassen** | Zu große Arbeitsbelastung und sehr unfaire Verteilung                                            |
+| **Routen gleichmäßig aufteilen**            | Faire Verteilung und Verantwortlichkeit, bei Mehraufwand oder Problemen wird geholfen            |
+
+### Entscheidung
+
+Wir haben beschlossen, die genannten Routen in unsere bestehende Architektur zu integrieren und sinnvoll aufzuteilen. Die Profilfunktion wird in zwei Routen aufgeteilt (Profil anzeigen und Profil bearbeiten). Die API-Routen für die Koordinatenbestimmung werden gesondert umgesetzt und die Standardrouten (Datenschutz, Impressum, Kontakt) als separate Seiten integriert. Die Aufteilung bleibt im Wesentlichen erhalten. Falls an einzelnen Stellen ein größerer Arbeitsaufwand entsteht, bieten wir gegenseitige Unterstützung an. Die Aufteilung bleibt vorerst wie am 15.11.2024 vereinbart bestehen.
+
+
+
 ### Quellen
 
 - User Interfaces | Full-Stack Web Dev @HWR Berlin URL: GitHub Repository
